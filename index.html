@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advanced HTML page for GitHub Learning Platform with Voice Search">
+    <meta name="author" content="Your Name">
+    <title>GitHub Learning Platform - Voice Search</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Optional external stylesheet for custom styles -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery for dynamic features -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .search-bar {
+            width: 60%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .search-button, .voice-button {
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .voice-button {
+            background-color: #17a2b8;
+        }
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin-top: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>GitHub Learning Platform</h1>
+        <p>Explore and Learn from Wikipedia</p>
+    </header>
+
+    <div class="container">
+        <input type="text" id="searchInput" class="search-bar" placeholder="Search Wikipedia...">
+        <button class="search-button" id="searchButton">Search</button>
+        <button class="voice-button" id="voiceButton">🎤 Voice Search</button>
+    </div>
+
+    <div class="container">
+        <h2>Wikipedia Reference</h2>
+        <iframe id="wikipediaIframe" src="https://en.wikipedia.org/wiki/Main_Page"></iframe>
+    </div>
+
+    <footer>
+        <p>Made with ❤️ by Your Name | GitHub Learning Platform</p>
+    </footer>
+
+    <script>
+        // jQuery for handling search functionality
+        $(document).ready(function() {
+            $('#searchButton').click(function() {
+                var searchQuery = $('#searchInput').val();
+                if (searchQuery) {
+                    var url = 'https://en.wikipedia.org/wiki/' + encodeURIComponent(searchQuery);
+                    $('#wikipediaIframe').attr('src', url);
+                } else {
+                    alert("Please enter a search term.");
+                }
+            });
+
+            // Voice recognition functionality using Web Speech API
+            const voiceButton = document.getElementById('voiceButton');
+            const searchInput = document.getElementById('searchInput');
+
+            // Check if the browser supports SpeechRecognition
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            if (SpeechRecognition) {
+                const recognition = new SpeechRecognition();
+                recognition.lang = 'en-US';
+                recognition.cont

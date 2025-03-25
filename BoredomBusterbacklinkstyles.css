@@ -1,0 +1,11 @@
+/BoredomBuster
+    /index.html       // Homepage
+    /game1.html       // Click the Box Game
+    /game2.html       // Memory Game
+    /game3.html       // Snake Game
+    /game4.html       // Pong Game
+    /style.css        // Global Styles and Game-specific Styles
+    /script.js        // Click the Box JavaScript (common)
+    /memory-game.js   // Memory Game JavaScript
+    /snake.js         // Snake Game JavaScript
+    /pong.js          // Pong Game JavaScript

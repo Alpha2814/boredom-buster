@@ -1,0 +1,29 @@
+/* Snake Game CSS */
+.game-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#snake-game {
+    border: 2px solid #333;
+    background-color: #000;
+    margin-top: 20px;
+}
+
+.score {
+    font-size: 20px;
+}
+
+.back-link {
+    margin-top: 20px;
+    text-decoration: none;
+    color: #ff6b6b;
+    font-size: 18px;
+}
+
+.back-link:hover {
+    color: #ff3b3b;
+}
